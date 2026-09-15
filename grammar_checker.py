@@ -15,22 +15,22 @@ def check_grammar(sentence):
     for i, token in enumerate(doc):
         word = token.text.lower()
 
-        # Rule 1: He/She/It + have → has
+        # He / She / It + have → has
         if word in ["he", "she", "it"]:
             if i + 1 < len(doc) and doc[i + 1].text.lower() == "have":
                 errors.append(("have", "has"))
 
-        # Rule 2: He/She/It + go → goes
+        # He / She / It + go → goes
         if word in ["he", "she", "it"]:
             if i + 1 < len(doc) and doc[i + 1].text.lower() == "go":
                 errors.append(("go", "goes"))
 
-        # Rule 3: They/We/You + is → are
+        # They / We / You + is → are
         if word in ["they", "we", "you"]:
             if i + 1 < len(doc) and doc[i + 1].text.lower() == "is":
                 errors.append(("is", "are"))
 
-        # Rule 4: He/She/It + are → is
+        # He / She / It + are → is
         if word in ["he", "she", "it"]:
             if i + 1 < len(doc) and doc[i + 1].text.lower() == "are":
                 errors.append(("are", "is"))
