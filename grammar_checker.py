@@ -18,22 +18,22 @@ def check_grammar(sentence):
         # He / She / It + have → has
         if word in ["he", "she", "it"]:
             if i + 1 < len(doc) and doc[i + 1].text.lower() == "have":
-                errors.append(("have", "has"))
+                errors.append((doc[i + 1].text, "has"))
 
         # He / She / It + go → goes
         if word in ["he", "she", "it"]:
             if i + 1 < len(doc) and doc[i + 1].text.lower() == "go":
-                errors.append(("go", "goes"))
+                errors.append((doc[i + 1].text, "goes"))
 
         # They / We / You + is → are
         if word in ["they", "we", "you"]:
             if i + 1 < len(doc) and doc[i + 1].text.lower() == "is":
-                errors.append(("is", "are"))
+                errors.append((doc[i + 1].text, "are"))
 
         # He / She / It + are → is
         if word in ["he", "she", "it"]:
             if i + 1 < len(doc) and doc[i + 1].text.lower() == "are":
-                errors.append(("are", "is"))
+                errors.append((doc[i + 1].text, "is"))
 
     print("\nGrammar Check:")
 
